@@ -25,7 +25,7 @@ import Foundation
 import Accelerate
 
 fileprivate func metalCompatiblityAttributes() -> [String: Any] {
-    #if os(macOS)
+    #if os(macOS) || targetEnvironment(macCatalyst)
   let attributes: [String: Any] = [
     String(kCVPixelBufferMetalCompatibilityKey): true,
     String(kCVPixelBufferOpenGLCompatibilityKey): true,
